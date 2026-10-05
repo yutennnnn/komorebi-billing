@@ -1,4 +1,5 @@
 import csv
+import math
 import sys
 from collections import defaultdict
 from datetime import datetime
@@ -15,7 +16,7 @@ def used_minutes(start, end):
 
 
 def calc_fee(room, minutes):
-    units = minutes // UNIT_MINUTES
+    units = math.ceil(minutes / UNIT_MINUTES)
     return RATES[room] * units
 
 
